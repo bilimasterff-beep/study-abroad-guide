@@ -1,0 +1,4208 @@
+<!DOCTYPE html>
+<html>
+
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>JSFiddle dczyu3fb</title>
+
+  <style>
+    
+  </style>
+
+  
+</head>
+<body>
+  <!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#020617">
+
+<title>StudyPath — Поступление за рубеж</title>
+
+<style>
+/* =========================================================
+   RESET
+========================================================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    -webkit-tap-highlight-color: transparent;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 95px;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: #ffffff;
+    background: #020617;
+    overflow-x: hidden;
+}
+
+/* =========================================================
+   SPACE
+========================================================= */
+
+.space {
+    position: fixed;
+    inset: 0;
+    z-index: -20;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 50% 10%,
+            rgba(79,70,229,.22),
+            transparent 32%
+        ),
+        radial-gradient(
+            circle at 10% 75%,
+            rgba(14,165,233,.12),
+            transparent 28%
+        ),
+        radial-gradient(
+            circle at 90% 75%,
+            rgba(168,85,247,.12),
+            transparent 28%
+        ),
+        #020617;
+}
+
+.stars,
+.stars2,
+.stars3 {
+    position: absolute;
+    inset: -100px;
+    pointer-events: none;
+}
+
+.stars {
+    background-image:
+        radial-gradient(2px 2px at 4% 8%, white, transparent),
+        radial-gradient(1px 1px at 9% 32%, white, transparent),
+        radial-gradient(2px 2px at 16% 71%, white, transparent),
+        radial-gradient(1px 1px at 24% 43%, white, transparent),
+        radial-gradient(2px 2px at 30% 84%, white, transparent),
+        radial-gradient(1px 1px at 38% 16%, white, transparent),
+        radial-gradient(2px 2px at 45% 57%, white, transparent),
+        radial-gradient(1px 1px at 53% 30%, white, transparent),
+        radial-gradient(2px 2px at 61% 79%, white, transparent),
+        radial-gradient(1px 1px at 68% 19%, white, transparent),
+        radial-gradient(2px 2px at 75% 51%, white, transparent),
+        radial-gradient(1px 1px at 82% 90%, white, transparent),
+        radial-gradient(2px 2px at 88% 28%, white, transparent),
+        radial-gradient(1px 1px at 95% 65%, white, transparent);
+
+    animation: starsMove 32s linear infinite;
+}
+
+.stars2 {
+    opacity: .50;
+
+    background-image:
+        radial-gradient(1px 1px at 7% 55%, #93c5fd, transparent),
+        radial-gradient(2px 2px at 14% 14%, #c4b5fd, transparent),
+        radial-gradient(1px 1px at 28% 33%, white, transparent),
+        radial-gradient(2px 2px at 41% 76%, #93c5fd, transparent),
+        radial-gradient(1px 1px at 53% 16%, white, transparent),
+        radial-gradient(2px 2px at 63% 61%, #c4b5fd, transparent),
+        radial-gradient(1px 1px at 77% 38%, white, transparent),
+        radial-gradient(2px 2px at 91% 83%, #93c5fd, transparent);
+
+    animation: starsMove 47s linear infinite reverse;
+}
+
+.stars3 {
+    opacity: .25;
+
+    background-image:
+        radial-gradient(1px 1px at 18% 20%, white, transparent),
+        radial-gradient(2px 2px at 35% 65%, #60a5fa, transparent),
+        radial-gradient(1px 1px at 49% 91%, white, transparent),
+        radial-gradient(2px 2px at 66% 24%, #a78bfa, transparent),
+        radial-gradient(1px 1px at 83% 52%, white, transparent),
+        radial-gradient(2px 2px at 96% 13%, #60a5fa, transparent);
+
+    animation: starsMove 62s linear infinite;
+}
+
+@keyframes starsMove {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(-170px);
+    }
+}
+
+/* =========================================================
+   PLANETS
+========================================================= */
+
+.planet {
+    position: absolute;
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.planet-blue {
+    width: 120px;
+    height: 120px;
+
+    right: 5%;
+    top: 16%;
+
+    background:
+        radial-gradient(
+            circle at 30% 28%,
+            #bfdbfe,
+            #3b82f6 37%,
+            #1e3a8a 70%,
+            #020617 100%
+        );
+
+    box-shadow:
+        0 0 45px rgba(59,130,246,.55),
+        0 0 110px rgba(59,130,246,.12);
+
+    animation: planetBlue 8s ease-in-out infinite;
+}
+
+.planet-red {
+    width: 62px;
+    height: 62px;
+
+    left: 4%;
+    top: 42%;
+
+    background:
+        radial-gradient(
+            circle at 30% 28%,
+            #fecaca,
+            #ef4444 48%,
+            #450a0a
+        );
+
+    box-shadow:
+        0 0 35px rgba(239,68,68,.35);
+
+    animation: planetRed 7s ease-in-out infinite;
+}
+
+.planet-gold {
+    width: 82px;
+    height: 82px;
+
+    left: 7%;
+    bottom: 8%;
+
+    background:
+        radial-gradient(
+            circle at 32% 26%,
+            #fef3c7,
+            #d97706 52%,
+            #451a03
+        );
+
+    box-shadow:
+        0 0 35px rgba(250,204,21,.24);
+
+    animation: planetGold 10s ease-in-out infinite;
+}
+
+.planet-gold::after {
+    content: "";
+
+    position: absolute;
+
+    width: 142px;
+    height: 30px;
+
+    left: -30px;
+    top: 26px;
+
+    border:
+        4px solid rgba(253,230,138,.55);
+
+    border-radius: 50%;
+
+    transform: rotate(-16deg);
+}
+
+@keyframes planetBlue {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-18px);
+    }
+}
+
+@keyframes planetRed {
+    0%,100% {
+        transform: translate(0,0);
+    }
+
+    50% {
+        transform: translate(12px,-14px);
+    }
+}
+
+@keyframes planetGold {
+    0%,100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(14px);
+    }
+}
+
+/* =========================================================
+   NAVIGATION
+========================================================= */
+
+nav {
+    position: fixed;
+
+    top: 14px;
+    left: 50%;
+
+    transform: translateX(-50%);
+
+    width: min(1200px,94%);
+    min-height: 62px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 8px 12px 8px 18px;
+
+    background:
+        rgba(2,6,23,.75);
+
+    border:
+        1px solid rgba(148,163,184,.20);
+
+    border-radius: 18px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 12px 50px rgba(0,0,0,.30);
+
+    z-index: 1000;
+}
+
+.logo {
+    color: white;
+
+    font-size: 22px;
+    font-weight: 900;
+
+    text-decoration: none;
+
+    white-space: nowrap;
+}
+
+.logo span {
+    color: #60a5fa;
+}
+
+.nav-links {
+    display: flex;
+
+    align-items: center;
+
+    gap: 4px;
+}
+
+.nav-links a {
+    color: #cbd5e1;
+
+    text-decoration: none;
+
+    padding: 10px 12px;
+
+    border-radius: 10px;
+
+    font-size: 13px;
+    font-weight: 700;
+
+    white-space: nowrap;
+
+    transition: .2s;
+}
+
+.nav-links a:hover {
+    background:
+        rgba(96,165,250,.14);
+
+    color: white;
+}
+
+@media(max-width:950px) {
+
+    nav {
+        justify-content: flex-start;
+
+        overflow-x: auto;
+
+        scrollbar-width: none;
+    }
+
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+
+    .nav-links {
+        flex-shrink: 0;
+    }
+}
+
+/* =========================================================
+   GENERAL
+========================================================= */
+
+section {
+    width: min(1160px,92%);
+    margin: auto;
+
+    padding: 95px 0;
+}
+
+.section-title {
+    text-align: center;
+
+    margin-bottom: 42px;
+}
+
+.section-title h2 {
+    font-size:
+        clamp(34px,5vw,58px);
+
+    margin-bottom: 12px;
+}
+
+.section-title p {
+    color: #94a3b8;
+
+    font-size: 17px;
+
+    line-height: 1.55;
+}
+
+.buttons {
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 12px;
+
+    margin-top: 30px;
+}
+
+.btn {
+    min-height: 48px;
+
+    padding: 13px 21px;
+
+    display: inline-flex;
+
+    align-items: center;
+    justify-content: center;
+
+    border: none;
+
+    border-radius: 13px;
+
+    color: white;
+
+    text-decoration: none;
+
+    font-size: 15px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .25s;
+}
+
+.btn-primary {
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    box-shadow:
+        0 10px 35px rgba(59,130,246,.25);
+}
+
+.btn-primary:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 17px 45px rgba(59,130,246,.38);
+}
+
+.btn-secondary {
+    background:
+        rgba(15,23,42,.84);
+
+    border:
+        1px solid rgba(148,163,184,.22);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-3px);
+
+    background:
+        rgba(30,41,59,.95);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+    min-height: 100vh;
+
+    padding:
+        135px 20px 90px;
+
+    display: flex;
+
+    align-items: center;
+    justify-content: center;
+
+    text-align: center;
+}
+
+.hero-box {
+    width: min(960px,100%);
+}
+
+.badge {
+    display: inline-block;
+
+    padding: 9px 15px;
+
+    margin-bottom: 22px;
+
+    border-radius: 999px;
+
+    background:
+        rgba(59,130,246,.12);
+
+    border:
+        1px solid rgba(96,165,250,.28);
+
+    color: #93c5fd;
+
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.hero h1 {
+    font-size:
+        clamp(48px,8vw,94px);
+
+    line-height: .98;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 24px;
+}
+
+.gradient {
+    background:
+        linear-gradient(
+            90deg,
+            #60a5fa,
+            #a78bfa,
+            #22d3ee
+        );
+
+    -webkit-background-clip: text;
+    background-clip: text;
+
+    color: transparent;
+}
+
+.hero p {
+    max-width: 790px;
+
+    margin: auto;
+
+    color: #c4b5fd;
+
+    font-size: 19px;
+
+    line-height: 1.65;
+}
+
+/* =========================================================
+   COUNTRY SELECTOR
+========================================================= */
+
+.country-section {
+    padding-top: 40px;
+}
+
+.country-switcher {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 15px;
+
+    margin-bottom: 30px;
+}
+
+.country-btn {
+    min-height: 110px;
+
+    padding: 20px;
+
+    border-radius: 20px;
+
+    border:
+        1px solid rgba(148,163,184,.14);
+
+    background:
+        rgba(15,23,42,.76);
+
+    color: white;
+
+    cursor: pointer;
+
+    transition: .25s;
+
+    text-align: left;
+}
+
+.country-btn:hover {
+    transform: translateY(-4px);
+
+    border-color:
+        rgba(96,165,250,.35);
+}
+
+.country-btn.active {
+    border-color:
+        rgba(96,165,250,.7);
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(37,99,235,.22),
+            rgba(124,58,237,.16)
+        );
+
+    box-shadow:
+        0 15px 40px rgba(37,99,235,.14);
+}
+
+.country-flag {
+    font-size: 32px;
+
+    margin-bottom: 9px;
+}
+
+.country-name {
+    font-size: 19px;
+
+    font-weight: 900;
+}
+
+.country-desc {
+    color: #94a3b8;
+
+    font-size: 13px;
+
+    margin-top: 5px;
+}
+
+.country-info {
+    padding: 25px;
+
+    border-radius: 22px;
+
+    border:
+        1px solid rgba(148,163,184,.15);
+
+    background:
+        rgba(15,23,42,.76);
+}
+
+.country-info h3 {
+    font-size: 25px;
+
+    margin-bottom: 10px;
+}
+
+.country-info p {
+    color: #94a3b8;
+
+    line-height: 1.65;
+}
+
+.info-pills {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 8px;
+
+    margin-top: 18px;
+}
+
+.info-pill {
+    padding: 8px 11px;
+
+    color: #bfdbfe;
+
+    background:
+        rgba(96,165,250,.09);
+
+    border:
+        1px solid rgba(96,165,250,.15);
+
+    border-radius: 10px;
+
+    font-size: 12px;
+
+    font-weight: 700;
+}
+
+/* =========================================================
+   STEPS
+========================================================= */
+
+.steps {
+    display: grid;
+
+    gap: 14px;
+}
+
+.step {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    padding: 22px;
+
+    background:
+        rgba(15,23,42,.76);
+
+    border:
+        1px solid rgba(148,163,184,.14);
+
+    border-radius: 18px;
+
+    transition: .22s;
+}
+
+.step:hover {
+    transform: translateX(4px);
+
+    border-color:
+        rgba(96,165,250,.28);
+}
+
+.step-number {
+    width: 44px;
+    min-width: 44px;
+
+    height: 44px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 50%;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    font-weight: 900;
+}
+
+.step h3 {
+    margin-bottom: 7px;
+}
+
+.step p {
+    color: #94a3b8;
+
+    line-height: 1.55;
+}
+
+/* =========================================================
+   GENERAL CARDS
+========================================================= */
+
+.grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 18px;
+}
+
+.card {
+    padding: 25px;
+
+    border-radius: 22px;
+
+    border:
+        1px solid rgba(148,163,184,.14);
+
+    background:
+        rgba(15,23,42,.76);
+
+    backdrop-filter: blur(15px);
+
+    transition: .25s;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+
+    border-color:
+        rgba(96,165,250,.38);
+
+    box-shadow:
+        0 20px 45px rgba(0,0,0,.22);
+}
+
+.icon {
+    font-size: 35px;
+
+    margin-bottom: 15px;
+}
+
+.card h3 {
+    font-size: 21px;
+
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: #94a3b8;
+
+    line-height: 1.55;
+}
+
+.price {
+    color: #60a5fa;
+
+    font-size: 30px;
+
+    font-weight: 900;
+
+    margin: 13px 0;
+}
+
+/* =========================================================
+   UNIVERSITY SEARCH
+========================================================= */
+
+.search-box {
+    display: grid;
+
+    grid-template-columns:
+        1fr 190px auto;
+
+    gap: 10px;
+
+    margin-bottom: 17px;
+}
+
+.search-box input,
+.search-box select {
+    width: 100%;
+
+    height: 52px;
+
+    padding: 0 16px;
+
+    color: white;
+
+    background:
+        rgba(15,23,42,.88);
+
+    border:
+        1px solid rgba(148,163,184,.20);
+
+    border-radius: 13px;
+
+    outline: none;
+
+    font-size: 15px;
+}
+
+.search-box input::placeholder {
+    color: #64748b;
+}
+
+.search-box input:focus,
+.search-box select:focus {
+    border-color: #60a5fa;
+
+    box-shadow:
+        0 0 0 3px rgba(96,165,250,.10);
+}
+
+.result-count {
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    margin-bottom: 18px;
+}
+
+/* =========================================================
+   UNIVERSITY CARDS
+========================================================= */
+
+.university-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(3,1fr);
+
+    gap: 16px;
+}
+
+.university-card {
+    position: relative;
+
+    overflow: hidden;
+
+    padding: 21px;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            145deg,
+            rgba(15,23,42,.95),
+            rgba(15,23,42,.70)
+        );
+
+    border:
+        1px solid rgba(148,163,184,.14);
+
+    transition: .25s;
+}
+
+.university-card:hover {
+    transform: translateY(-5px);
+
+    border-color:
+        rgba(96,165,250,.42);
+
+    box-shadow:
+        0 20px 42px rgba(0,0,0,.25);
+}
+
+.university-card::after {
+    content: "";
+
+    position: absolute;
+
+    width: 120px;
+    height: 120px;
+
+    top: -45px;
+    right: -45px;
+
+    background: #2563eb;
+
+    filter: blur(60px);
+
+    opacity: .14;
+
+    pointer-events: none;
+}
+
+.university-logo {
+    width: 52px;
+    height: 52px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 14px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    font-size: 25px;
+
+    margin-bottom: 15px;
+}
+
+.university-card h3 {
+    font-size: 19px;
+
+    line-height: 1.3;
+
+    margin-bottom: 7px;
+}
+
+.location {
+    color: #94a3b8;
+
+    font-size: 14px;
+
+    margin-bottom: 14px;
+}
+
+.tags {
+    display: flex;
+
+    flex-wrap: wrap;
+
+    gap: 6px;
+}
+
+.tag {
+    display: inline-block;
+
+    padding: 6px 8px;
+
+    border-radius: 8px;
+
+    background:
+        rgba(96,165,250,.09);
+
+    border:
+        1px solid rgba(96,165,250,.15);
+
+    color: #bfdbfe;
+
+    font-size: 11px;
+
+    font-weight: 700;
+}
+
+.tag.green {
+    color: #86efac;
+
+    background:
+        rgba(74,222,128,.08);
+
+    border-color:
+        rgba(74,222,128,.15);
+}
+
+.tag.gold {
+    color: #fde68a;
+
+    background:
+        rgba(250,204,21,.08);
+
+    border-color:
+        rgba(250,204,21,.15);
+}
+
+.university-button {
+    width: 100%;
+
+    padding: 11px;
+
+    margin-top: 16px;
+
+    color: white;
+
+    background:
+        rgba(30,41,59,.82);
+
+    border:
+        1px solid rgba(148,163,184,.18);
+
+    border-radius: 11px;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    transition: .2s;
+}
+
+.university-button:hover {
+    background:
+        rgba(51,65,85,.96);
+}
+
+.load-more {
+    display: flex;
+    justify-content: center;
+
+    margin-top: 28px;
+}
+
+.empty-results {
+    grid-column: 1 / -1;
+
+    padding: 65px 20px;
+
+    text-align: center;
+
+    color: #94a3b8;
+
+    background:
+        rgba(15,23,42,.70);
+
+    border-radius: 20px;
+}
+
+.empty-results .big {
+    font-size: 48px;
+
+    margin-bottom: 12px;
+}
+
+/* =========================================================
+   UNIVERSITY MODAL
+========================================================= */
+
+.university-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5000;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.78);
+
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+}
+
+.university-modal.active {
+    display: flex;
+}
+
+.modal-box {
+    position: relative;
+
+    width: min(720px,100%);
+
+    max-height: 88vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #0f172a,
+            #111827
+        );
+
+    border:
+        1px solid rgba(148,163,184,.20);
+
+    border-radius: 27px;
+
+    box-shadow:
+        0 30px 100px rgba(0,0,0,.65);
+
+    animation:
+        modalAppear .25s ease;
+}
+
+@keyframes modalAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(12px)
+            scale(.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+.modal-close {
+    position: absolute;
+
+    top: 17px;
+    right: 17px;
+
+    width: 40px;
+    height: 40px;
+
+    border: none;
+
+    border-radius: 50%;
+
+    background:
+        #1e293b;
+
+    color: white;
+
+    font-size: 18px;
+
+    cursor: pointer;
+}
+
+.modal-heading {
+    display: flex;
+
+    align-items: flex-start;
+
+    gap: 17px;
+
+    padding-right: 47px;
+
+    margin-bottom: 22px;
+}
+
+.modal-logo {
+    width: 66px;
+    min-width: 66px;
+
+    height: 66px;
+
+    display: grid;
+    place-items: center;
+
+    border-radius: 18px;
+
+    background:
+        linear-gradient(
+            135deg,
+            #2563eb,
+            #7c3aed
+        );
+
+    font-size: 31px;
+}
+
+.modal-heading h2 {
+    font-size: 29px;
+
+    line-height: 1.2;
+
+    margin-bottom: 7px;
+}
+
+.modal-location {
+    color: #94a3b8;
+
+    font-size: 14px;
+}
+
+.modal-description {
+    color: #cbd5e1;
+
+    line-height: 1.67;
+
+    margin-bottom: 24px;
+}
+
+.info-grid {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2,1fr);
+
+    gap: 12px;
+
+    margin-bottom: 25px;
+}
+
+.info-box {
+    padding: 17px;
+
+    border-radius: 15px;
+
+    background:
+        rgba(30,41,59,.70);
+
+    border:
+        1px solid rgba(148,163,184,.12);
+}
+
+.info-box span {
+    display: block;
+
+    color: #64748b;
+
+    font-size: 12px;
+
+    margin-bottom: 7px;
+}
+
+.info-box strong {
+    color: #e2e8f0;
+
+    font-size: 15px;
+
+    line-height: 1.4;
+}
+
+.modal-actions {
+    display: grid;
+
+    grid-template-columns:
+        1fr 1.5fr;
+
+    gap: 10px;
+}
+
+.modal-actions .btn {
+    width: 100%;
+}
+
+/* =========================================================
+   CTA
+========================================================= */
+
+.cta {
+    text-align: center;
+
+    padding: 70px 25px;
+
+    border-radius: 28px;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(79,70,229,.28),
+            transparent 55%
+        ),
+        rgba(15,23,42,.77);
+
+    border:
+        1px solid rgba(96,165,250,.20);
+}
+
+.cta h2 {
+    font-size:
+        clamp(32px,5vw,47px);
+
+    margin-bottom: 15px;
+}
+
+.cta p {
+    max-width: 700px;
+
+    margin: auto;
+
+    color: #94a3b8;
+
+    line-height: 1.65;
+}
+
+/* =========================================================
+   FOOTER
+========================================================= */
+
+footer {
+    padding:
+        40px 20px 55px;
+
+    text-align: center;
+
+    color: #64748b;
+
+    line-height: 1.7;
+}
+
+/* =========================================================
+   CHECKLIST MODAL
+========================================================= */
+
+.checklist-modal {
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 5100;
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+
+    background:
+        rgba(0,0,0,.76);
+
+    backdrop-filter: blur(9px);
+}
+
+.checklist-modal.active {
+    display: flex;
+}
+
+.checklist-box {
+    position: relative;
+
+    width: min(630px,100%);
+
+    max-height: 85vh;
+
+    overflow-y: auto;
+
+    padding: 30px;
+
+    border-radius: 25px;
+
+    background: #0f172a;
+
+    border:
+        1px solid rgba(148,163,184,.20);
+}
+
+.checklist-box h2 {
+    margin-bottom: 14px;
+}
+
+.checklist-box p {
+    color: #94a3b8;
+
+    line-height: 1.6;
+
+    margin-bottom: 15px;
+}
+
+.checklist-box ul {
+    padding-left: 20px;
+
+    margin-bottom: 20px;
+}
+
+.checklist-box li {
+    color: #cbd5e1;
+
+    line-height: 1.75;
+}
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media(max-width:900px) {
+
+    .country-switcher {
+        grid-template-columns: 1fr;
+    }
+
+    .grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .university-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search-box {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .search-box input {
+        grid-column: 1 / -1;
+    }
+}
+
+@media(max-width:600px) {
+
+    section {
+        padding: 75px 0;
+    }
+
+    .hero h1 {
+        letter-spacing: -2px;
+    }
+
+    .grid,
+    .university-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box {
+        grid-template-columns: 1fr;
+    }
+
+    .search-box input {
+        grid-column: auto;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-actions {
+        grid-template-columns: 1fr;
+    }
+
+    .modal-box,
+    .checklist-box {
+        padding: 23px;
+    }
+
+    .modal-heading h2 {
+        font-size: 23px;
+    }
+
+    .planet-blue {
+        width: 75px;
+        height: 75px;
+    }
+
+    .planet-red {
+        width: 45px;
+        height: 45px;
+    }
+
+    .planet-gold {
+        width: 60px;
+        height: 60px;
+    }
+}
+</style>
+</head>
+
+
+<body>
+
+
+<!-- =========================================================
+     SPACE
+========================================================= -->
+
+<div class="space">
+
+    <div class="stars"></div>
+    <div class="stars2"></div>
+    <div class="stars3"></div>
+
+    <div class="planet planet-blue"></div>
+    <div class="planet planet-red"></div>
+    <div class="planet planet-gold"></div>
+
+</div>
+
+
+<!-- =========================================================
+     NAVIGATION
+========================================================= -->
+
+<nav>
+
+    <a
+        href="#home"
+        class="logo"
+    >
+        🌎 <span>Study</span>Path
+    </a>
+
+
+    <div class="nav-links">
+
+        <a href="#home">
+            🏠 Начало
+        </a>
+
+        <a href="#countries">
+            🌎 Страны
+        </a>
+
+        <a href="#admission">
+            🎓 Поступление
+        </a>
+
+        <a href="#tests">
+            📝 IELTS & SAT
+        </a>
+
+        <a href="#universities">
+            🏫 Вузы
+        </a>
+
+    </div>
+
+</nav>
+
+
+<!-- =========================================================
+     HERO
+========================================================= -->
+
+<header
+    class="hero"
+    id="home"
+>
+
+    <div class="hero-box">
+
+        <div class="badge">
+            🚀 StudyPath — образование без границ
+        </div>
+
+
+        <h1>
+
+            Найди свой путь
+
+            <br>
+
+            <span class="gradient">
+                в университет мечты
+            </span>
+
+        </h1>
+
+
+        <p>
+
+            США, Южная Корея или Италия —
+            изучай университеты, требования,
+            языковые тесты, стоимость,
+            scholarships и процесс поступления.
+
+        </p>
+
+
+        <div class="buttons">
+
+            <a
+                href="#countries"
+                class="btn btn-primary"
+            >
+                🌎 Выбрать страну
+            </a>
+
+
+            <button
+                class="btn btn-secondary"
+                onclick="openChecklist()"
+            >
+                📋 Что мне нужно?
+            </button>
+
+        </div>
+
+    </div>
+
+</header>
+
+
+<!-- =========================================================
+     COUNTRIES
+========================================================= -->
+
+<section
+    id="countries"
+    class="country-section"
+>
+
+    <div class="section-title">
+
+        <h2>
+            🌎 Куда поступать?
+        </h2>
+
+        <p>
+            Выбери страну и посмотри её университеты
+        </p>
+
+    </div>
+
+
+    <div class="country-switcher">
+
+
+        <button
+            class="country-btn active"
+            data-country="usa"
+            onclick="selectCountry('usa')"
+        >
+
+            <div class="country-flag">
+                🇺🇸
+            </div>
+
+            <div class="country-name">
+                США
+            </div>
+
+            <div class="country-desc">
+                SAT · IELTS · Common App · Scholarships
+            </div>
+
+        </button>
+
+
+        <button
+            class="country-btn"
+            data-country="korea"
+            onclick="selectCountry('korea')"
+        >
+
+            <div class="country-flag">
+                🇰🇷
+            </div>
+
+            <div class="country-name">
+                Южная Корея
+            </div>
+
+            <div class="country-desc">
+                TOPIK · English programs · GKS · Scholarships
+            </div>
+
+        </button>
+
+
+        <button
+            class="country-btn"
+            data-country="italy"
+            onclick="selectCountry('italy')"
+        >
+
+            <div class="country-flag">
+                🇮🇹
+            </div>
+
+            <div class="country-name">
+                Италия
+            </div>
+
+            <div class="country-desc">
+                IELTS · Admission tests · Scholarships
+            </div>
+
+        </button>
+
+    </div>
+
+
+    <div
+        class="country-info"
+        id="countryInfo"
+    ></div>
+
+</section>
+
+
+<!-- =========================================================
+     ADMISSION
+========================================================= -->
+
+<section id="admission">
+
+    <div class="section-title">
+
+        <h2>
+            🎓 Как поступить?
+        </h2>
+
+        <p>
+            Основные этапы подготовки
+        </p>
+
+    </div>
+
+
+    <div class="steps">
+
+
+        <div class="step">
+
+            <div class="step-number">
+                1
+            </div>
+
+            <div>
+
+                <h3>
+                    📚 Учёба
+                </h3>
+
+                <p>
+                    Следи за школьными оценками
+                    и формируй сильный академический профиль.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                2
+            </div>
+
+            <div>
+
+                <h3>
+                    🌎 Выбери страну
+                </h3>
+
+                <p>
+                    Сравни требования, языковые тесты,
+                    стоимость и программы университетов.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                3
+            </div>
+
+            <div>
+
+                <h3>
+                    📝 Тесты
+                </h3>
+
+                <p>
+                    Проверь, нужен ли IELTS, TOEFL,
+                    TOPIK, SAT, ACT или другой экзамен.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                4
+            </div>
+
+            <div>
+
+                <h3>
+                    🏆 Достижения
+                </h3>
+
+                <p>
+                    Проекты, олимпиады, исследования,
+                    спорт, клубы, волонтёрство и другие
+                    активности.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                5
+            </div>
+
+            <div>
+
+                <h3>
+                    📄 Документы
+                </h3>
+
+                <p>
+                    Transcript, эссе, рекомендации,
+                    паспорт и другие документы
+                    в зависимости от страны.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                6
+            </div>
+
+            <div>
+
+                <h3>
+                    💰 Финансирование
+                </h3>
+
+                <p>
+                    Ищи scholarships, grants,
+                    financial aid и другие варианты.
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="step">
+
+            <div class="step-number">
+                7
+            </div>
+
+            <div>
+
+                <h3>
+                    🛂 Виза
+                </h3>
+
+                <p>
+                    После зачисления изучи правила
+                    получения студенческой визы
+                    конкретной страны.
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     TESTS
+========================================================= -->
+
+<section id="tests">
+
+    <div class="section-title">
+
+        <h2>
+            📝 IELTS · SAT · TOPIK
+        </h2>
+
+        <p>
+            Основные экзамены, которые могут понадобиться
+        </p>
+
+    </div>
+
+
+    <div class="grid">
+
+
+        <div class="card">
+
+            <div class="icon">
+                🇬🇧
+            </div>
+
+            <h3>
+                IELTS
+            </h3>
+
+            <div class="price">
+                English
+            </div>
+
+            <p>
+                Может использоваться для подтверждения
+                уровня английского. Конкретные требования
+                зависят от университета и программы.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://ielts.org/"
+                    target="_blank"
+                    class="btn btn-secondary"
+                >
+                    🌐 IELTS
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                📐
+            </div>
+
+            <h3>
+                SAT
+            </h3>
+
+            <div class="price">
+                USA
+            </div>
+
+            <p>
+                Стандартизированный тест, который
+                некоторые американские университеты
+                требуют или принимают.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://satsuite.collegeboard.org/"
+                    target="_blank"
+                    class="btn btn-secondary"
+                >
+                    🌐 College Board
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🇰🇷
+            </div>
+
+            <h3>
+                TOPIK
+            </h3>
+
+            <div class="price">
+                Korea
+            </div>
+
+            <p>
+                Корейский языковой экзамен.
+                Конкретный требуемый уровень зависит
+                от программы и университета.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://www.topik.go.kr/"
+                    target="_blank"
+                    class="btn btn-secondary"
+                >
+                    🌐 TOPIK
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🎯
+            </div>
+
+            <h3>
+                Бесплатная подготовка
+            </h3>
+
+            <div class="price">
+                $0
+            </div>
+
+            <p>
+                Используй официальные бесплатные
+                материалы, пробные тесты и учебные
+                ресурсы.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://www.khanacademy.org/"
+                    target="_blank"
+                    class="btn btn-secondary"
+                >
+                    📚 Khan Academy
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                🇮🇹
+            </div>
+
+            <h3>
+                Италия
+            </h3>
+
+            <div class="price">
+                Tests
+            </div>
+
+            <p>
+                В отдельных программах могут быть
+                вступительные или национальные тесты.
+                Проверяй условия конкретной программы.
+            </p>
+
+            <div class="buttons">
+
+                <a
+                    href="https://www.universitaly.eu/"
+                    target="_blank"
+                    class="btn btn-secondary"
+                >
+                    🌐 Universitaly
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="card">
+
+            <div class="icon">
+                💡
+            </div>
+
+            <h3>
+                Главное правило
+            </h3>
+
+            <div class="price">
+                ✅
+            </div>
+
+            <p>
+                Не сдавай тест только потому,
+                что его требует другой университет.
+                Проверяй требования именно своего курса.
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     UNIVERSITY SEARCH
+========================================================= -->
+
+<section id="universities">
+
+    <div class="section-title">
+
+        <h2>
+            🏫 Университеты
+        </h2>
+
+        <p>
+            Выбери страну и найди подходящий университет
+        </p>
+
+    </div>
+
+
+    <div
+        class="search-box"
+    >
+
+        <input
+            id="searchInput"
+            type="text"
+            placeholder="🔎 Например: Stanford, Seoul, Milan..."
+        >
+
+
+        <select
+            id="regionFilter"
+        >
+
+            <option value="all">
+                Все регионы
+            </option>
+
+        </select>
+
+
+        <button
+            class="btn btn-secondary"
+            onclick="resetSearch()"
+        >
+            🔄 Сбросить
+        </button>
+
+    </div>
+
+
+    <div
+        class="result-count"
+        id="resultCount"
+    >
+        Университетов найдено: 0
+    </div>
+
+
+    <div
+        class="university-grid"
+        id="universityGrid"
+    ></div>
+
+
+    <div class="load-more">
+
+        <button
+            id="loadMore"
+            class="btn btn-primary"
+            onclick="showMoreUniversities()"
+        >
+            Показать ещё
+        </button>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     CTA
+========================================================= -->
+
+<section>
+
+    <div class="cta">
+
+        <h2>
+            🚀 Твой университет может быть здесь
+        </h2>
+
+        <p>
+            Сравни страны, изучай требования,
+            ищи финансирование и заранее готовь
+            документы для поступления.
+        </p>
+
+        <div class="buttons">
+
+            <a
+                href="#universities"
+                class="btn btn-primary"
+            >
+                🔎 Найти университет
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<!-- =========================================================
+     FOOTER
+========================================================= -->
+
+<footer>
+
+    🌎 <strong>StudyPath</strong> © 2026
+
+    <br>
+
+    Путеводитель по поступлению
+    в университеты разных стран.
+
+    <br><br>
+
+    ⚠️ Требования, цены, дедлайны и правила
+    могут меняться. Перед подачей проверяй
+    официальные сайты университета и страны.
+
+</footer>
+
+
+<!-- =========================================================
+     UNIVERSITY MODAL
+========================================================= -->
+
+<div
+    class="university-modal"
+    id="universityModal"
+>
+
+    <div class="modal-box">
+
+        <button
+            class="modal-close"
+            onclick="closeUniversityModal()"
+        >
+            ✕
+        </button>
+
+
+        <div class="modal-heading">
+
+            <div class="modal-logo">
+                🎓
+            </div>
+
+
+            <div>
+
+                <h2 id="modalName">
+                    University
+                </h2>
+
+                <div
+                    class="modal-location"
+                    id="modalLocation"
+                >
+                    📍 Location
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <p
+            class="modal-description"
+            id="modalDescription"
+        >
+            University information.
+        </p>
+
+
+        <div class="info-grid">
+
+
+            <div class="info-box">
+
+                <span>
+                    🌎 Страна
+                </span>
+
+                <strong id="modalCountry">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    📝 Язык / тест
+                </span>
+
+                <strong id="modalLanguage">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    📐 SAT / экзамен
+                </span>
+
+                <strong id="modalExam">
+                    —
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    💰 Финансирование
+                </span>
+
+                <strong id="modalFunding">
+                    Scholarships / Aid
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    🏫 Тип
+                </span>
+
+                <strong id="modalType">
+                    University
+                </strong>
+
+            </div>
+
+
+            <div class="info-box">
+
+                <span>
+                    🌍 International
+                </span>
+
+                <strong>
+                    ✅ Возможность обучения
+                </strong>
+
+            </div>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="btn btn-secondary"
+                onclick="closeUniversityModal()"
+            >
+                ← Назад
+            </button>
+
+
+            <a
+                id="officialWebsite"
+                href="#"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                🌐 Официальный сайт
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+<!-- =========================================================
+     CHECKLIST MODAL
+========================================================= -->
+
+<div
+    class="checklist-modal"
+    id="checklistModal"
+>
+
+    <div class="checklist-box">
+
+        <button
+            class="modal-close"
+            onclick="closeChecklist()"
+        >
+            ✕
+        </button>
+
+
+        <h2>
+            📋 Базовый чек-лист
+        </h2>
+
+
+        <p>
+            Конкретные требования зависят от страны,
+            университета и выбранной программы.
+        </p>
+
+
+        <ul>
+
+            <li>
+                📚 Школьный transcript / аттестат
+            </li>
+
+            <li>
+                🌎 Выбранная страна и университет
+            </li>
+
+            <li>
+                🇬🇧 IELTS / TOEFL или другой языковой тест
+                при необходимости
+            </li>
+
+            <li>
+                📐 SAT / ACT для программ,
+                где это требуется
+            </li>
+
+            <li>
+                🇰🇷 TOPIK для программ,
+                где нужен корейский язык
+            </li>
+
+            <li>
+                🏆 Extracurricular activities
+            </li>
+
+            <li>
+                ✍️ Essays / мотивационное письмо
+            </li>
+
+            <li>
+                👨‍🏫 Recommendation Letters,
+                если требуются
+            </li>
+
+            <li>
+                💰 Scholarships / Financial Aid
+            </li>
+
+            <li>
+                🗓️ Дедлайны
+            </li>
+
+            <li>
+                🛂 Студенческая виза
+            </li>
+
+        </ul>
+
+
+        <button
+            class="btn btn-primary"
+            onclick="closeChecklist()"
+        >
+            Понятно 🚀
+        </button>
+
+    </div>
+
+</div>
+
+
+<script>
+/* =========================================================
+   UNIVERSITY DATA
+========================================================= */
+
+const universities = [
+
+    /* =====================================================
+       USA
+    ===================================================== */
+
+    {
+        country: "usa",
+        countryName: "США",
+        name: "Harvard University",
+        city: "Cambridge",
+        region: "Massachusetts",
+        language: "English",
+        exam: "SAT / ACT required",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Harvard University is a highly selective U.S. university. " +
+            "International applicants should review the current testing, " +
+            "English-language, financial-aid and application requirements.",
+        website: "https://college.harvard.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "США",
+        name: "Stanford University",
+        city: "Stanford",
+        region: "California",
+        language: "English",
+        exam: "SAT / ACT required",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Stanford University is located in California and is known " +
+            "for research, technology and entrepreneurship. Review its " +
+            "current admissions requirements before applying.",
+        website: "https://www.stanford.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "США",
+        name: "Massachusetts Institute of Technology",
+        city: "Cambridge",
+        region: "Massachusetts",
+        language: "English",
+        exam: "SAT / ACT required",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "MIT is a research university with a strong focus on science, " +
+            "engineering, computing and technology.",
+        website: "https://www.mit.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "США",
+        name: "Yale University",
+        city: "New Haven",
+        region: "Connecticut",
+        language: "English",
+        exam: "Testing policy varies by cycle",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Yale is a highly selective university with undergraduate " +
+            "programs across many academic areas.",
+        website: "https://www.yale.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "США",
+        name: "Princeton University",
+        city: "Princeton",
+        region: "New Jersey",
+        language: "English",
+        exam: "Policy varies by cycle",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Princeton University is a private research university in New Jersey.",
+        website: "https://www.princeton.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "США",
+        name: "Columbia University",
+        city: "New York",
+        region: "New York",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Columbia University is located in New York City and offers " +
+            "a broad range of undergraduate study options.",
+        website: "https://www.columbia.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "США",
+        name: "Cornell University",
+        city: "Ithaca",
+        region: "New York",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Cornell is a major research university in New York State " +
+            "with a wide selection of academic programs.",
+        website: "https://www.cornell.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "University of Pennsylvania",
+        city: "Philadelphia",
+        region: "Pennsylvania",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "The University of Pennsylvania is a private research university " +
+            "in Philadelphia.",
+        website: "https://www.upenn.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "Brown University",
+        city: "Providence",
+        region: "Rhode Island",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Brown University is known for its flexible undergraduate curriculum.",
+        website: "https://www.brown.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "Dartmouth College",
+        city: "Hanover",
+        region: "New Hampshire",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Dartmouth College is an undergraduate-focused Ivy League institution.",
+        website: "https://home.dartmouth.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "Duke University",
+        city: "Durham",
+        region: "North Carolina",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Duke University is a private research university in North Carolina.",
+        website: "https://www.duke.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "Northwestern University",
+        city: "Evanston",
+        region: "Illinois",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "Northwestern University is located near Chicago and offers " +
+            "programs across many academic disciplines.",
+        website: "https://www.northwestern.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "University of Chicago",
+        city: "Chicago",
+        region: "Illinois",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Financial Aid",
+        type: "Private",
+        description:
+            "The University of Chicago is a private research university " +
+            "with a strong emphasis on academics and research.",
+        website: "https://www.uchicago.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "Carnegie Mellon University",
+        city: "Pittsburgh",
+        region: "Pennsylvania",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Scholarships / Aid",
+        type: "Private",
+        description:
+            "Carnegie Mellon is especially known for computer science, " +
+            "engineering, design and technology.",
+        website: "https://www.cmu.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "University of California, Berkeley",
+        city: "Berkeley",
+        region: "California",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Aid / Scholarships",
+        type: "Public",
+        description:
+            "UC Berkeley is a major public research university in California.",
+        website: "https://www.berkeley.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "University of California, Los Angeles",
+        city: "Los Angeles",
+        region: "California",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Aid / Scholarships",
+        type: "Public",
+        description:
+            "UCLA is a large public research university in Los Angeles.",
+        website: "https://www.ucla.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "University of Michigan",
+        city: "Ann Arbor",
+        region: "Michigan",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Aid / Scholarships",
+        type: "Public",
+        description:
+            "The University of Michigan is a major public research university.",
+        website: "https://umich.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "University of Washington",
+        city: "Seattle",
+        region: "Washington",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Aid / Scholarships",
+        type: "Public",
+        description:
+            "The University of Washington is a leading public research university in Seattle.",
+        website: "https://www.washington.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "University of Texas at Austin",
+        city: "Austin",
+        region: "Texas",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Aid / Scholarships",
+        type: "Public",
+        description:
+            "UT Austin is a large public university in Texas.",
+        website: "https://www.utexas.edu/"
+    },
+
+    {
+        country: "usa",
+        countryName: "Georgia Institute of Technology",
+        city: "Atlanta",
+        region: "Georgia",
+        language: "English",
+        exam: "Check current policy",
+        funding: "Aid / Scholarships",
+        type: "Public",
+        description:
+            "Georgia Tech is particularly known for engineering, technology and computing.",
+        website: "https://www.gatech.edu/"
+    },
+
+
+    /* =====================================================
+       SOUTH KOREA
+    ===================================================== */
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Seoul National University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships / GKS",
+        type: "National",
+        description:
+            "Seoul National University is one of Korea's major national universities. " +
+            "International applicants should check the current international admissions guide.",
+        website: "https://en.snu.ac.kr/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "KAIST",
+        city: "Daejeon",
+        region: "Daejeon",
+        language: "English / Korean",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "National",
+        description:
+            "KAIST is a science and technology university in Daejeon.",
+        website: "https://www.kaist.ac.kr/en/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "POSTECH",
+        city: "Pohang",
+        region: "Gyeongsangbuk-do",
+        language: "English / Korean",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "POSTECH is a science and engineering-focused university in Pohang.",
+        website: "https://www.postech.ac.kr/eng/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Yonsei University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Yonsei University is a major private university in Seoul with international programs.",
+        website: "https://www.yonsei.ac.kr/en_sc/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Korea University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Korea University is a major private research university in Seoul.",
+        website: "https://www.korea.ac.kr/mbshome/mbs/en/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Sungkyunkwan University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Sungkyunkwan University has campuses in Seoul and Suwon and offers many international study options.",
+        website: "https://www.skku.edu/eng/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Hanyang University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Hanyang University is a major private university with a strong engineering reputation.",
+        website: "https://www.hanyang.ac.kr/web/eng"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Kyung Hee University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Kyung Hee University offers a wide range of undergraduate and graduate programs.",
+        website: "https://www.khu.ac.kr/eng/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Ewha Womans University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Ewha Womans University is a major private university in Seoul.",
+        website: "https://www.ewha.ac.kr/ewhaen/index.do"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Sogang University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Sogang University is a private university located in Seoul.",
+        website: "https://www.sogang.ac.kr/en/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Pusan National University",
+        city: "Busan",
+        region: "Busan",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships / GKS",
+        type: "National",
+        description:
+            "Pusan National University is a major national university in Busan.",
+        website: "https://www.pusan.ac.kr/eng/Main.do"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Kyungpook National University",
+        city: "Daegu",
+        region: "Daegu",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships / GKS",
+        type: "National",
+        description:
+            "Kyungpook National University is a national university in Daegu.",
+        website: "https://en.knu.ac.kr/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "UNIST",
+        city: "Ulsan",
+        region: "Ulsan",
+        language: "English / Korean",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "National",
+        description:
+            "UNIST is a science and technology university in Ulsan.",
+        website: "https://www.unist.ac.kr/eng/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Gwangju Institute of Science and Technology",
+        city: "Gwangju",
+        region: "Gwangju",
+        language: "English / Korean",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "National",
+        description:
+            "GIST is a science and technology research university in Gwangju.",
+        website: "https://www.gist.ac.kr/en/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Chung-Ang University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Chung-Ang University is a private university in Seoul.",
+        website: "https://neweng.cau.ac.kr/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Ajou University",
+        city: "Suwon",
+        region: "Gyeonggi-do",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Ajou University is a private research university in Suwon.",
+        website: "https://www.ajou.ac.kr/en/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Inha University",
+        city: "Incheon",
+        region: "Incheon",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Inha University is located in Incheon and offers many engineering and international programs.",
+        website: "https://eng.inha.ac.kr/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Konkuk University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Konkuk University is a private university in Seoul.",
+        website: "https://www.konkuk.ac.kr/eng/"
+    },
+
+    {
+        country: "korea",
+        countryName: "Южная Корея",
+        name: "Sejong University",
+        city: "Seoul",
+        region: "Seoul",
+        language: "Korean / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "Sejong University is a private university located in Seoul.",
+        website: "https://en.sejong.ac.kr/"
+    },
+
+
+    /* =====================================================
+       ITALY
+    ===================================================== */
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Bologna",
+        city: "Bologna",
+        region: "Emilia-Romagna",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Bologna is a major Italian public university with international programs.",
+        website: "https://www.unibo.it/en/"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "Politecnico di Milano",
+        city: "Milan",
+        region: "Lombardy",
+        language: "Italian / English",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "Politecnico di Milano is Italy's major science and technology university in Milan.",
+        website: "https://www.polimi.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "Sapienza University of Rome",
+        city: "Rome",
+        region: "Lazio",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "Sapienza University of Rome is a large public university in Rome.",
+        website: "https://www.uniroma1.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Padua",
+        city: "Padua",
+        region: "Veneto",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Padua is a major public university in northern Italy.",
+        website: "https://www.unipd.it/en/"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Milan",
+        city: "Milan",
+        region: "Lombardy",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Milan is a major public university in Lombardy.",
+        website: "https://www.unimi.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "Politecnico di Torino",
+        city: "Turin",
+        region: "Piedmont",
+        language: "Italian / English",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "Politecnico di Torino specializes in engineering, architecture and technology.",
+        website: "https://www.polito.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Pisa",
+        city: "Pisa",
+        region: "Tuscany",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Pisa is a historic public university in Tuscany.",
+        website: "https://www.unipi.it/index.php/english"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Turin",
+        city: "Turin",
+        region: "Piedmont",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Turin is a large public university in northern Italy.",
+        website: "https://en.unito.it/"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Florence",
+        city: "Florence",
+        region: "Tuscany",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Florence is a public university in Tuscany.",
+        website: "https://www.unifi.it/index.php#"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Trento",
+        city: "Trento",
+        region: "Trentino-Alto Adige",
+        language: "Italian / English",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Trento offers programs in science, technology and other fields.",
+        website: "https://www.unitn.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "Bocconi University",
+        city: "Milan",
+        region: "Lombardy",
+        language: "English / Italian",
+        exam: "Program-specific",
+        funding: "Funding / Scholarships",
+        type: "Private",
+        description:
+            "Bocconi University in Milan specializes in economics, management, finance and related fields.",
+        website: "https://www.unibocconi.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "LUISS Guido Carli",
+        city: "Rome",
+        region: "Lazio",
+        language: "Italian / English",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Private",
+        description:
+            "LUISS Guido Carli is a private university in Rome focused on economics, business, law and politics.",
+        website: "https://www.luiss.edu/"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Siena",
+        city: "Siena",
+        region: "Tuscany",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Siena is a public university in Tuscany.",
+        website: "https://en.unisi.it/"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Naples Federico II",
+        city: "Naples",
+        region: "Campania",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Naples Federico II is a major public university in Naples.",
+        website: "https://www.unina.it/en_GB/home"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Pavia",
+        city: "Pavia",
+        region: "Lombardy",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Pavia is a historic public university in northern Italy.",
+        website: "https://en.unipv.it/"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Verona",
+        city: "Verona",
+        region: "Veneto",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Verona is a public university in the Veneto region.",
+        website: "https://www.univr.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "Ca' Foscari University of Venice",
+        city: "Venice",
+        region: "Veneto",
+        language: "Italian / English",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "Ca' Foscari University of Venice offers programs in languages, economics, humanities and other fields.",
+        website: "https://www.unive.it/pag/13526/"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Genoa",
+        city: "Genoa",
+        region: "Liguria",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Genoa is a public university in Liguria.",
+        website: "https://unige.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Parma",
+        city: "Parma",
+        region: "Emilia-Romagna",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Parma is a public university in Emilia-Romagna.",
+        website: "https://www.unipr.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Ferrara",
+        city: "Ferrara",
+        region: "Emilia-Romagna",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Ferrara is a public university in northern Italy.",
+        website: "https://www.unife.it/en"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Modena and Reggio Emilia",
+        city: "Modena",
+        region: "Emilia-Romagna",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Modena and Reggio Emilia is a public Italian university.",
+        website: "https://www.unimore.it/english.html"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Cagliari",
+        city: "Cagliari",
+        region: "Sardinia",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Cagliari is a public university in Sardinia.",
+        website: "https://en.unica.it/"
+    },
+
+    {
+        country: "italy",
+        countryName: "Италия",
+        name: "University of Palermo",
+        city: "Palermo",
+        region: "Sicily",
+        language: "Italian / English programs",
+        exam: "Program-specific",
+        funding: "Scholarships",
+        type: "Public",
+        description:
+            "The University of Palermo is a public university in Sicily.",
+        website: "https://www.unipa.it/mobilita/en/"
+    }
+
+];
+
+
+/* =========================================================
+   CURRENT COUNTRY
+========================================================= */
+
+let currentCountry = "usa";
+
+let currentResults = [];
+
+let visibleCount = 12;
+
+
+/* =========================================================
+   COUNTRY INFORMATION
+========================================================= */
+
+const countryInformation = {
+
+    usa: {
+        flag: "🇺🇸",
+        title: "Поступление в США",
+        text:
+            "В США требования сильно отличаются между университетами. " +
+            "Могут учитываться школьные оценки, SAT/ACT, English proficiency, " +
+            "essays, recommendations, extracurricular activities и финансовые документы.",
+        pills: [
+            "SAT / ACT",
+            "IELTS / TOEFL",
+            "Common App",
+            "Essays",
+            "Scholarships",
+            "Financial Aid",
+            "F-1 Visa"
+        ],
+        official: "https://educationusa.state.gov/"
+    },
+
+    korea: {
+        flag: "🇰🇷",
+        title: "Поступление в Южную Корею",
+        text:
+            "Для Кореи требования зависят от университета и программы. " +
+            "Для программ на корейском языке может потребоваться подтверждение корейского языка, " +
+            "а для международных программ могут действовать требования по английскому языку. " +
+            "Также существует система государственных и университетских scholarships.",
+        pills: [
+            "TOPIK",
+            "English programs",
+            "GKS",
+            "Scholarships",
+            "Admission Guide",
+            "Student Visa"
+        ],
+        official: "https://www.studyinkorea.go.kr/en/"
+    },
+
+    italy: {
+        flag: "🇮🇹",
+        title: "Поступление в Италию",
+        text:
+            "В Италии требования зависят от программы. " +
+            "Для некоторых курсов существуют вступительные или национальные тесты, " +
+            "а международным студентам необходимо учитывать процедуры pre-enrolment, " +
+            "признание документов и визовые требования.",
+        pills: [
+            "IELTS",
+            "English programs",
+            "Italian",
+            "Admission tests",
+            "Scholarships",
+            "Universitaly",
+            "Student Visa"
+        ],
+        official: "https://www.universitaly.eu/"
+    }
+
+};
+
+
+/* =========================================================
+   SHOW COUNTRY INFORMATION
+========================================================= */
+
+function renderCountryInfo() {
+
+    const info =
+        countryInformation[currentCountry];
+
+    const container =
+        document.getElementById("countryInfo");
+
+    container.innerHTML = `
+
+        <div style="font-size:38px;margin-bottom:8px">
+            ${info.flag}
+        </div>
+
+        <h3>
+            ${info.title}
+        </h3>
+
+        <p>
+            ${info.text}
+        </p>
+
+        <div class="info-pills">
+
+            ${
+                info.pills
+                    .map(
+                        pill =>
+                            `<span class="info-pill">${pill}</span>`
+                    )
+                    .join("")
+            }
+
+        </div>
+
+        <div class="buttons">
+
+            <a
+                href="${info.official}"
+                target="_blank"
+                rel="noopener noreferrer"
+                class="btn btn-primary"
+            >
+                🌐 Официальный портал
+            </a>
+
+        </div>
+    `;
+}
+
+
+/* =========================================================
+   COUNTRY SELECT
+========================================================= */
+
+function selectCountry(country) {
+
+    currentCountry = country;
+
+    visibleCount = 12;
+
+    document
+        .querySelectorAll(".country-btn")
+        .forEach(button => {
+
+            button.classList.toggle(
+                "active",
+                button.dataset.country === country
+            );
+
+        });
+
+
+    searchInput.value = "";
+
+    regionFilter.innerHTML = `
+
+        <option value="all">
+            Все регионы
+        </option>
+
+    `;
+
+
+    const regions = [
+        ...new Set(
+            universities
+                .filter(
+                    university =>
+                        university.country === country
+                )
+                .map(
+                    university =>
+                        university.region
+                )
+        )
+    ].sort();
+
+
+    regions.forEach(region => {
+
+        const option =
+            document.createElement("option");
+
+        option.value = region;
+
+        option.textContent = region;
+
+        regionFilter.appendChild(option);
+
+    });
+
+
+    renderCountryInfo();
+
+    filterUniversities();
+
+    document
+        .getElementById("universities")
+        .scrollIntoView({
+            behavior: "smooth"
+        });
+}
+
+
+/* =========================================================
+   ELEMENTS
+========================================================= */
+
+const searchInput =
+    document.getElementById("searchInput");
+
+const regionFilter =
+    document.getElementById("regionFilter");
+
+const universityGrid =
+    document.getElementById("universityGrid");
+
+const resultCount =
+    document.getElementById("resultCount");
+
+const loadMoreButton =
+    document.getElementById("loadMore");
+
+
+/* =========================================================
+   FILTER UNIVERSITIES
+========================================================= */
+
+function filterUniversities() {
+
+    const query =
+        searchInput.value
+            .trim()
+            .toLowerCase();
+
+    const region =
+        regionFilter.value;
+
+
+    currentResults =
+        universities.filter(
+            university => {
+
+                if (
+                    university.country !==
+                    currentCountry
+                ) {
+                    return false;
+                }
+
+
+                const searchableText =
+                    (
+                        university.name +
+                        " " +
+                        university.city +
+                        " " +
+                        university.region
+                    ).toLowerCase();
+
+
+                const matchesSearch =
+                    searchableText
+                        .includes(query);
+
+
+                const matchesRegion =
+                    region === "all" ||
+                    university.region === region;
+
+
+                return (
+                    matchesSearch &&
+                    matchesRegion
+                );
+
+            }
+        );
+
+
+    renderUniversities();
+}
+
+
+/* =========================================================
+   RENDER UNIVERSITIES
+========================================================= */
+
+function renderUniversities() {
+
+    universityGrid.innerHTML = "";
+
+
+    const visible =
+        currentResults.slice(
+            0,
+            visibleCount
+        );
+
+
+    resultCount.textContent =
+        `${currentResults.length} университетов найдено`;
+
+
+    if (
+        currentResults.length === 0
+    ) {
+
+        universityGrid.innerHTML = `
+
+            <div class="empty-results">
+
+                <div class="big">
+                    🔭
+                </div>
+
+                <h3>
+                    Ничего не найдено
+                </h3>
+
+                <p style="margin-top:8px">
+                    Попробуй другое название
+                    или выбери другой регион.
+                </p>
+
+            </div>
+
+        `;
+
+        loadMoreButton.style.display =
+            "none";
+
+        return;
+    }
+
+
+    visible.forEach(
+        university => {
+
+            const card =
+                document.createElement("article");
+
+            card.className =
+                "university-card";
+
+
+            const logo =
+                currentCountry === "usa"
+                    ? "🇺🇸"
+                    : currentCountry === "korea"
+                        ? "🇰🇷"
+                        : "🇮🇹";
+
+
+            card.innerHTML = `
+
+                <div class="university-logo">
+
+                    ${logo}
+
+                </div>
+
+
+                <h3>
+                    ${escapeHTML(
+                        university.name
+                    )}
+                </h3>
+
+
+                <div class="location">
+
+                    📍
+                    ${escapeHTML(
+                        university.city
+                    )},
+
+                    ${escapeHTML(
+                        university.region
+                    )}
+
+                </div>
+
+
+                <div class="tags">
+
+                    <span class="tag">
+
+                        🌎 International
+
+                    </span>
+
+
+                    <span class="tag green">
+
+                        💰 Scholarships
+
+                    </span>
+
+                </div>
+
+
+                <button
+                    class="university-button"
+                >
+                    Подробнее →
+                </button>
+
+            `;
+
+
+            card
+                .querySelector(
+                    ".university-button"
+                )
+                .addEventListener(
+                    "click",
+                    function() {
+
+                        openUniversity(
+                            university
+                        );
+
+                    }
+                );
+
+
+            universityGrid.appendChild(
+                card
+            );
+
+        }
+    );
+
+
+    if (
+        visibleCount <
+        currentResults.length
+    ) {
+
+        loadMoreButton.style.display =
+            "inline-flex";
+
+    } else {
+
+        loadMoreButton.style.display =
+            "none";
+
+    }
+}
+
+
+/* =========================================================
+   SHOW MORE
+========================================================= */
+
+function showMoreUniversities() {
+
+    visibleCount += 12;
+
+    renderUniversities();
+}
+
+
+/* =========================================================
+   RESET
+========================================================= */
+
+function resetSearch() {
+
+    searchInput.value = "";
+
+    regionFilter.value = "all";
+
+    visibleCount = 12;
+
+    filterUniversities();
+}
+
+
+/* =========================================================
+   UNIVERSITY MODAL
+========================================================= */
+
+function openUniversity(university) {
+
+    document.getElementById(
+        "modalName"
+    ).textContent =
+        university.name;
+
+
+    document.getElementById(
+        "modalLocation"
+    ).textContent =
+        `📍 ${university.city}, ${university.region}`;
+
+
+    document.getElementById(
+        "modalCountry"
+    ).textContent =
+        university.countryName;
+
+
+    document.getElementById(
+        "modalLanguage"
+    ).textContent =
+        university.language;
+
+
+    document.getElementById(
+        "modalExam"
+    ).textContent =
+        university.exam;
+
+
+    document.getElementById(
+        "modalFunding"
+    ).textContent =
+        university.funding;
+
+
+    document.getElementById(
+        "modalType"
+    ).textContent =
+        university.type;
+
+
+    document.getElementById(
+        "modalDescription"
+    ).textContent =
+        university.description;
+
+
+    const website =
+        document.getElementById(
+            "officialWebsite"
+        );
+
+
+    website.href =
+        university.website;
+
+
+    document
+        .getElementById(
+            "universityModal"
+        )
+        .classList.add(
+            "active"
+        );
+
+}
+
+
+function closeUniversityModal() {
+
+    document
+        .getElementById(
+            "universityModal"
+        )
+        .classList.remove(
+            "active"
+        );
+
+}
+
+
+/* =========================================================
+   CHECKLIST
+========================================================= */
+
+function openChecklist() {
+
+    document
+        .getElementById(
+            "checklistModal"
+        )
+        .classList.add(
+            "active"
+        );
+
+}
+
+
+function closeChecklist() {
+
+    document
+        .getElementById(
+            "checklistModal"
+        )
+        .classList.remove(
+            "active"
+        );
+
+}
+
+
+/* =========================================================
+   CLOSE MODALS
+========================================================= */
+
+document
+    .getElementById(
+        "universityModal"
+    )
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                closeUniversityModal();
+
+            }
+
+        }
+    );
+
+
+document
+    .getElementById(
+        "checklistModal"
+    )
+    .addEventListener(
+        "click",
+        function(event) {
+
+            if (
+                event.target === this
+            ) {
+
+                closeChecklist();
+
+            }
+
+        }
+    );
+
+
+document.addEventListener(
+    "keydown",
+    function(event) {
+
+        if (
+            event.key === "Escape"
+        ) {
+
+            closeUniversityModal();
+            closeChecklist();
+
+        }
+
+    }
+);
+
+
+/* =========================================================
+   SEARCH LISTENERS
+========================================================= */
+
+searchInput.addEventListener(
+    "input",
+    filterUniversities
+);
+
+
+regionFilter.addEventListener(
+    "change",
+    filterUniversities
+);
+
+
+/* =========================================================
+   HTML ESCAPE
+========================================================= */
+
+function escapeHTML(value) {
+
+    return String(value)
+        .replace(/&/g, "&amp;")
+        .replace(/</g, "&lt;")
+        .replace(/>/g, "&gt;")
+        .replace(/"/g, "&quot;")
+        .replace(/'/g, "&#039;");
+
+}
+
+
+/* =========================================================
+   START
+========================================================= */
+
+renderCountryInfo();
+
+selectCountry("usa");
+
+</script>
+
+</body>
+</html>
+
+  <script>
+    
+  </script>
+</body>
+</html>
